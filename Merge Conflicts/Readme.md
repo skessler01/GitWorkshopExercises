@@ -60,24 +60,17 @@ The push fails, since the remote already contains new changes to the same file f
 GitHub does not solve the conflicts automatically!
 The computer trying to push the local changes has to make sure that the remote changes are integrated before pushing.
 
-## Solving the merge conflict
+**The following only applies to partner B:**
 
-There are two approaches:
-
-- Undo the local changes
-- Solve the merge conflicts manually
-
-We will focus on the latter for now on.
-Since the merge conflict happened on partner B's computer, the merge conflict has to be solved there.
-Thus, the following only applies to partner B:
-
-Get the remote changes via 'git pull'. Your text output should contain something like:
+Get the remote changes via 'git pull'. Your command output should contain something like:
 
 > CONFLICT (content): Merge conflict in python_template.py
 > Automatic merge failed; fix conflicts and then commit the result.
 
-Git tells you that it could not merge the conflicts automatically since they were made to the same region in the same file.
+Git tells you that it could not merge the remote changes automatically since they were made to the same region in the same file.
 If they were in different files or different regions of the same file, git would probably perform the merge itself.
+
+## Solving the merge conflict
 
 When looking at the mentioned file, you'll see that git added information about the location of the changes:
 
