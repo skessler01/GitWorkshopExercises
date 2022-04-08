@@ -19,6 +19,11 @@ To create a merge conflict without using branches, two different git clients are
 For this exercise, you need to be grouped into pairs of two, decide who is partner A and B.
 If you have not already, clone this repository into a local folder.
 
+The exercises work by modifying a program template. Choose one to your liking, but both partners need to choose the same file.
+
+- Python: python_template.py
+- C#: cs_template.cs
+
 ## Producing the merge conflict
 
 ### 1.
@@ -29,14 +34,14 @@ After this, **DO NOT PULL ON EITHER OF THE CLIENTS IF THE EXERCISE DOES NOT SAY 
 
 ### 2.
 
-Partner A implements the function "operation" by setting the value of ret_val to ((a+b) * c)/d instead of 0.
+Partner A implements the function "operation" by setting the value of result to ((a+b) * c)/d instead of 0.
 
 Partner A then commits and pushes the changes.
 
 ### 3.
 **AGAIN, DO NOT PULL JUST YET!**
 
-Partner B implements the function "operation" by setting the value of ret_val to (a\*c +  b\*c)/d instead of 0.
+Partner B implements the function "operation" by setting the value of result to (a\*c +  b\*c)/d instead of 0.
 
 Partner B then commits and tries to push the changes.
 
@@ -64,8 +69,23 @@ The computer trying to push the local changes has to make sure that the remote c
 
 Get the remote changes via 'git pull'. Your command output should contain something like:
 
+<details>
+<summary>Python (click me!)</summary>
+
 > CONFLICT (content): Merge conflict in python_template.py
+> 
 > Automatic merge failed; fix conflicts and then commit the result.
+
+</details>
+
+<details>
+<summary>C#  (click me!)</summary>
+
+> CONFLICT (content): Merge conflict in cs_template.cs
+> 
+> Automatic merge failed; fix conflicts and then commit the result.
+
+</details>
 
 Git tells you that it could not merge the remote changes automatically since they were made to the same region in the same file.
 If they were in different files or different regions of the same file, git would probably perform the merge itself.
@@ -74,21 +94,26 @@ If they were in different files or different regions of the same file, git would
 
 When looking at the mentioned file, you'll see that git added information about the location of the changes:
 
+<details>
+
+<summary>Python  (click me!)</summary>
+
 ```py
 def operation(a, b, c, d):
 <<<<<<< HEAD (Current Change)
-    ret_val = (a*c +  b*c)/d
+    result = (a*c +  b*c)/d
 =======
-    ret_val = ((a+b)) * c)/d
+    result = ((a+b)) * c)/d
 >>>>>>> 9d32dca2134c25546c06c9e041549413ae722374 (Incoming Change)
-    return ret_val
+    return result
 ```
+
 
 Note the two sections. The first one
 
 ```py
 <<<<<<< HEAD (Current Change)
-    ret_val = (a*c +  b*c)/d
+    result = (a*c +  b*c)/d
 =======
 ```
 
@@ -96,7 +121,7 @@ Shows the local changes that partner B wants to commit and push! The second one
 
 ```py
 =======
-    ret_val = ((a+b)) * c)/d
+    result = ((a+b)) * c)/d
 >>>>>>> 9d32dca2134c25546c06c9e041549413ae722374 (Incoming Change)
 ```
 
@@ -109,19 +134,78 @@ Either enforce the local changes:
 
 ```py
 def operation(a, b, c, d):
-    ret_val = (a*c +  b*c)/d
-    return ret_val
+    result = (a*c +  b*c)/d
+    return result
 ```
 
 Or accept the remote changes:
 
 ```py
 def operation(a, b, c, d):
-    ret_val = ((a+b)) * c)/d
-    return ret_val
+    result = ((a+b)) * c)/d
+    return result
 ```
 
-After adding and committing, you can push the merged changes to the remote.
+Now add and commit the changes. After that, you can push to the remote.
+</details>
+
+<details>
+
+<summary>C#  (click me!)</summary>
+
+```cs
+    public Int operation(Int a, Int b, Int c, Int d) {
+<<<<<<< HEAD (Current Change)
+        Int result = (a*c +  b*c)/d;
+=======
+        Int result = (a*c +  b*c)/d;
+>>>>>>> 9d32dca2134c25546c06c9e041549413ae722374 (Incoming Change)  
+        return result;
+    }
+```
+
+
+Note the two sections. The first one
+
+```cs
+<<<<<<< HEAD (Current Change)
+    Int result = (a*c +  b*c)/d;
+=======
+```
+
+Shows the local changes that partner B wants to commit and push! The second one
+
+```cs
+=======
+    Int result = (a*c +  b*c)/d;
+>>>>>>> 9d32dca2134c25546c06c9e041549413ae722374 (Incoming Change)
+```
+
+Shows the changes that were uploaded to the repository while partner B was working on the same code.
+Note that while the resulting value is the same, git cannot automatically decide which one to choose.
+
+This has to be done manually by partner B.
+For this, change the code such that it contains only one solution (also delete the lines added by git!).
+Either enforce the local changes:
+
+```cs
+    public Int operation(Int a, Int b, Int c, Int d) {
+        Int result = (a*c +  b*c)/d;
+        return result;
+    }
+```
+
+Or accept the remote changes:
+
+```cs
+    public Int operation(Int a, Int b, Int c, Int d) {
+        Int result = (a*c +  b*c)/d;
+        return result;
+    }
+```
+
+Now add and commit the changes. After that, you can push to the remote.
+</details>
 
 ## Summary
 
