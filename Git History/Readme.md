@@ -1,4 +1,4 @@
-# Solving Merge Conflicts
+# Git History
 
 ## Introduction
 
