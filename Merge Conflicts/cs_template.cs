@@ -19,11 +19,7 @@ public class Program
     // For partner B:
     // ret_val = (a*c +  b*c)/d
     public Int operation(Int a, Int b, Int c, Int d) {
-<<<<<<< HEAD (Current Change)
-        Int result = (a*c +  b*c)/d;
-=======
-        Int result = (a*c +  b*c)/d;
->>>>>>> 9d32dca2134c25546c06c9e041549413ae722374 (Incoming Change)  
+        Int result = 0;
         return result;
     }
 }

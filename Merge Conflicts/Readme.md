@@ -207,6 +207,26 @@ Or accept the remote changes:
 Now add and commit the changes. After that, you can push to the remote.
 </details>
 
+## Git pull rebase
+
+When the remote repo contains unaccounted changes, a normal git pull merges two states as if they existed at the same time.
+If there are merge conflicts that can be resolved automatically, then git **automatically creates merge commits**.
+Since this can cause unwanted behavior, there are two possible parameters:
+
+> git pull **--ff-only**
+
+Will only combine local changes and remote changes if no merging has to be done (Changes in different files, ...).
+This will fail if files need to be merged (automatically or merge conflicts).
+
+> git pull **--rebase**
+
+Assuming the repo was in a state A before your changes B and the remote changes C, the resulting order in which changes are applied will be: A - C - B.
+While this feels to be the cleanest solution, it can mangle the history and cause other problems.
+
+When passing no parameter, the resulting behavior could be classified as something in between rebase and ff-only.
+
+About git rebase: https://medium.com/@harishlyadav/when-to-use-git-rebase-explained-3c8192cba5c7
+
 ## Summary
 
 Merge conflicts are created when the remote repository contains unaccounted changes during a push.
