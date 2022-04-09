@@ -105,6 +105,10 @@ After a successful merge, you can delete the old branch via
 
 > git branch -d [branch Name]
 
+To delete the remote branch use
+
+> git push origin --delete [branch Name]
+
 Or keep it around if you still need it. Remember that you still need to push your changes (but no commit!).
 
 ## Remembering Merge Conflicts
