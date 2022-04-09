@@ -5,6 +5,7 @@
 One of the big advantages of version control is that you can revert changes if needed.
 For this, the git history contains all commits, their creator, ....
 This exercise will focus on how you can use git history to solve problems.
+(Feel free to mock my commit messages for this repository during the exercise :D)
 
 ## (Optional) Resources for more information
 
