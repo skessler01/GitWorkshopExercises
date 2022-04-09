@@ -101,6 +101,7 @@ You can also limit the lines via the -L option
 > git blame [file] -L 40,60
 
 Try to find out who insulted you in the text file 'documentation.txt'.
+You can also use the found commit ID to check out the exact changes.
 
 ## (Optional) Git bisect
 
