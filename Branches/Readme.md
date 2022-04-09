@@ -152,6 +152,8 @@ Giving everyone their own branch allows you to keep everything clean, but you al
 As you can see, there is no 'best' solution.
 Try to split the project into different independent sections and create a branch for each of them.
 This minimizes the amount of possible conflicts and makes merging a lot simpler.
+When a new part of the branch is ready, merge it back into the main and from the main into the other branches.
+How to do this is shown in the next exercise.
 
 ## Summary
 
