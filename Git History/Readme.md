@@ -79,18 +79,7 @@ If you want to view a version at the point of a previous commit, you can do so v
 
 > git checkout [commit ID]
 
-If you want to return to the most recent commit, use
-
-> git checkout main
-
-Or
-
-> git checkout master
-
-Depending on what your main branch is named.
-
-To test this, revert this repository to its state after commit *b1800286ec1e9da2d51ac080ef67fd5b916f5e53* .
-Find the file in the same directory as this Readme file.
+To test this, revert this repository to its state after commit *b1800286ec1e9da2d51ac080ef67fd5b916f5e53* and find the file in the same directory as this Readme file.
 
 This should also show you why it is never a smart idea to put credentials in a git repository.
 
@@ -111,7 +100,7 @@ You can also limit the lines via the -L option
 
 > git blame [file] -L 40,60
 
-To test this, try to find out who insulted you in the text file 'documentation.txt'.
+Try to find out who insulted you in the text file 'documentation.txt'.
 
 ## (Optional) Git bisect
 
