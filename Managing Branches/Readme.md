@@ -77,15 +77,47 @@ The goal of this part is to create a pull request for one of your branches.
 First, add some changes to branch B, commit and push them.
 Go to GitHub.com and open your forked GitWorkshopExercises repository.
 
-To create a pull request, use the tab 'Pull request'.
+To create a pull request, use the tab 'Pull request' and click on 'new pull request'.
+You should now be able to choose the source and destination branch:
 
+<img src="pr.PNG">
 
+Base is the branch the changes will be applied to and compare the change's origin.
+GitHub will automatically show the differing commits and changes.
+It may also tell you that an automatic merge isn't possible due to a merge conflict.
 
+To create the pull request, click 'create pull request'.
+GitHub will then allow you to specify a title and description for the pull request.
+Normally, Reviewers and Assignees would be filled automatically, but we did not setup access control.
+Finalize the request vie 'create pull request'.
 
+When reviewing the new pull request, you can see that GitHub automatically checks for merge conflicts.
+If there are any, you can perform them via the webinterface.
 
+If there aren't any or you solved them already, you can merge the pull request.
+
+<img src="mr.PNG">
+
+## Branches being ahead and behind
+
+Now that you've worked a lot with branches, you know that commits can be made independently to them.
+
+If you want to see the differences between branches, it is best to use GitHub or a GUI tool.
+They allow you to check the differences in commits rather than just looking at the files.
+
+A common metric is the x ahead/behind main commits metric.
+It tells you how many commits have been made to the default (main) branch (behind main count) and how many commits have been made to the inspected branch (ahead main count).
+Obviously, both can be larger than zero.
+It is also worth mentioning, that when merging the main branch into your considered branch, the behind main count is set back to 0.
+
+Check these statistics via [REPO URL]/branches on GitHub.
+Take a look at the overwview:
+
+<img src="branches.PNG">
 
 ## Summary
 
-The git history contains all commits, their authors and exact changes.
-You can use it to find out what others changed in the project in order to be up-to-date with the status of the project.
-The git history should never be altered!
+When using multiple branches, you have to cherry-pick and merge from time to time.
+The goal is to keep all branches up-to-date.
+Obviously, the more branches there are, the more complicated to manage this process gets.
+That's why GUIs and Webinterfaces are your best friends for managing branches.
