@@ -80,7 +80,7 @@ Go to GitHub.com and open your forked GitWorkshopExercises repository.
 To create a pull request, use the tab 'Pull request' and click on 'new pull request'.
 You should now be able to choose the source and destination branch:
 
-<img src="pr.PNG">
+![Pull request example](pr.PNG)
 
 Base is the branch the changes will be applied to and compare the change's origin.
 GitHub will automatically show the differing commits and changes.
@@ -97,7 +97,7 @@ If there are any, you can perform them via the webinterface.
 If there aren't any or you solved them already, you can merge the pull request.
 The pull request will stay open, until you add a comment and close it manually!
 
-<img src="mr.PNG">
+![Merge request example](mr.PNG)
 
 ## Branches being ahead and behind
 
@@ -114,7 +114,7 @@ It is also worth mentioning, that when merging the main branch into your conside
 Check these statistics via [REPO URL]/branches on GitHub.
 Take a look at the overwview:
 
-<img src="branches.PNG">
+![Branches screen](branches.PNG)
 
 ## Summary
 

@@ -29,7 +29,7 @@ The output shows all commits. Considering a single entry
 > 
 > Date:   Fri Apr 8 17:49:26 2022 +0200
 
-It contains the unique commit ID, author and date/time of the commit.
+It contains the unique commit ID (a hash), author and date/time of the commit.
 Since the output is very long, you may need to quit using 'q' if you want to enter another command.
 
 You can limit the output to the last x entries via
