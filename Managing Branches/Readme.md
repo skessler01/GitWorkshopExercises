@@ -95,6 +95,7 @@ When reviewing the new pull request, you can see that GitHub automatically check
 If there are any, you can perform them via the webinterface.
 
 If there aren't any or you solved them already, you can merge the pull request.
+The pull request will stay open, until you add a comment and close it manually!
 
 <img src="mr.PNG">
 
